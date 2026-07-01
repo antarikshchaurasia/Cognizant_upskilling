@@ -4,21 +4,18 @@ interface Document {
 
 // Concrete Documents
 class WordDocument implements Document {
-    @Override
     public void open() {
         System.out.println("Word Document Opened");
     }
 }
 
 class PdfDocument implements Document {
-    @Override
     public void open() {
         System.out.println("PDF Document Opened");
     }
 }
 
 class ExcelDocument implements Document {
-    @Override
     public void open() {
         System.out.println("Excel Document Opened");
     }
@@ -31,21 +28,18 @@ abstract class DocumentFactory {
 
 // Concrete Factories
 class WordFactory extends DocumentFactory {
-    @Override
     Document createDocument() {
         return new WordDocument();
     }
 }
 
 class PdfFactory extends DocumentFactory {
-    @Override
     Document createDocument() {
         return new PdfDocument();
     }
 }
 
 class ExcelFactory extends DocumentFactory {
-    @Override
     Document createDocument() {
         return new ExcelDocument();
     }
