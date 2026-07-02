@@ -13,9 +13,6 @@ CREATE TABLE Loans (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
------------------------------------------------------
--- Insert Sample Data
------------------------------------------------------
 
 INSERT INTO Customers VALUES (101,'Antariksh',65,19000,'FALSE');
 INSERT INTO Customers VALUES (102,'Ravi',45,7000,'FALSE');
@@ -38,16 +35,9 @@ SELECT * FROM Loans;
 
 COMMIT;
 
------------------------------------------------------
--- PL/SQL Block
------------------------------------------------------
 
 BEGIN
 
-    -------------------------------------------------
-    -- Scenario 1
-    -- Give 1% discount on loan interest if Age > 60
-    -------------------------------------------------
 
     FOR c IN (
         SELECT CustomerID
@@ -63,12 +53,6 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Scenario 1 Completed');
 
 
-
-    -------------------------------------------------
-    -- Scenario 2
-    -- Make customer VIP if Balance > 10000
-    -------------------------------------------------
-
     FOR c IN (
         SELECT CustomerID
         FROM Customers
@@ -82,12 +66,6 @@ BEGIN
 
     DBMS_OUTPUT.PUT_LINE('Scenario 2 Completed');
 
-
-
-    -------------------------------------------------
-    -- Scenario 3
-    -- Print loan reminders due within 30 days
-    -------------------------------------------------
 
     FOR l IN (
         SELECT LoanID,CustomerID,DueDate

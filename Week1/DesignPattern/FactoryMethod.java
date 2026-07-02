@@ -2,7 +2,6 @@ interface Document {
     void open();
 }
 
-// Concrete Documents
 class WordDocument implements Document {
     public void open() {
         System.out.println("Word Document Opened");
@@ -21,12 +20,10 @@ class ExcelDocument implements Document {
     }
 }
 
-// Abstract Factory
 abstract class DocumentFactory {
     abstract Document createDocument();
 }
 
-// Concrete Factories
 class WordFactory extends DocumentFactory {
     Document createDocument() {
         return new WordDocument();
@@ -45,7 +42,7 @@ class ExcelFactory extends DocumentFactory {
     }
 }
 
-// Main Class (Filename: FactoryMethod.java)
+
 public class FactoryMethod {
     public static void main(String[] args) {
 

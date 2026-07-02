@@ -26,9 +26,6 @@ CREATE TABLE StaffMembers (
     Salary NUMBER(10,2)
 );
 
----------------------------------------------------------
--- Sample Data
----------------------------------------------------------
 
 INSERT INTO BankAccounts VALUES (101,'Antariksh','SAVINGS',12000);
 INSERT INTO BankAccounts VALUES (102,'Payal','SAVINGS',18000);
@@ -56,10 +53,7 @@ SELECT AccountNo,
 FROM BankAccounts;
 COMMIT;
 
----------------------------------------------------------
--- Scenario 1
--- Procedure : Add Monthly Interest
----------------------------------------------------------
+
 
 CREATE OR REPLACE PROCEDURE ApplyMonthlyInterest
 IS
@@ -74,10 +68,7 @@ BEGIN
 END;
 /
 
----------------------------------------------------------
--- Scenario 2
--- Procedure : Increase Salary with Bonus
----------------------------------------------------------
+
 
 CREATE OR REPLACE PROCEDURE GiveDepartmentBonus(
     p_department IN VARCHAR2,
@@ -95,10 +86,6 @@ BEGIN
 END;
 /
 
----------------------------------------------------------
--- Scenario 3
--- Procedure : Transfer Money
----------------------------------------------------------
 
 CREATE OR REPLACE PROCEDURE MoveFunds(
     p_fromAccount IN NUMBER,
@@ -137,9 +124,6 @@ BEGIN
 END;
 /
 
----------------------------------------------------------
--- Execute Procedures
----------------------------------------------------------
 
 BEGIN
     ApplyMonthlyInterest;
@@ -150,9 +134,7 @@ BEGIN
 END;
 /
 
----------------------------------------------------------
--- View Results
----------------------------------------------------------
+
 
 SELECT * FROM BankAccounts;
 
